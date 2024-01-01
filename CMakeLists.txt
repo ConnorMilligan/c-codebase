@@ -6,8 +6,8 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-deprecated -Wall")
 
 # Set the project files
-file(GLOB PROJECT_HEADERS "src/*.h")
-file(GLOB PROJECT_SOURCES "src/*.c")
+file(GLOB_RECURSE PROJECT_HEADERS "src/*.h")
+file(GLOB_RECURSE PROJECT_SOURCES "src/*.c")
 
 source_group("Headers" FILES ${PROJECT_HEADERS})
 source_group("Sources" FILES ${PROJECT_SOURCES})

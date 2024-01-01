@@ -8,22 +8,16 @@
 // -------------------
 
 // Unsigned int types.
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef unsigned int u32;
-typedef unsigned long long u64;
-
-// Signed int types.
-typedef signed char s8;
-typedef signed short s16;
-typedef signed int s32;
-typedef signed long long s64;
+typedef unsigned char uint8;
+typedef unsigned short uint16;
+typedef unsigned int uint32;
+typedef unsigned long long uint64;
 
 // Regular int types.
-typedef char i8;
-typedef short i16;
-typedef int i32;
-typedef long long i64;
+typedef char int8;
+typedef short int16;
+typedef int int32;
+typedef long long int64;
 
 // Floating point types
 typedef float f32;
