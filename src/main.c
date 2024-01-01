@@ -6,17 +6,15 @@
 int main(int argc, char **argv) {
     STList list;
     STListInit(&list);
-    int* int1 = malloc(sizeof(int));
-    *int1 = 1;
-    int* int2 = malloc(sizeof(int));
-    *int2 = 2;
-    int* int3 = malloc(sizeof(int));
-    *int3 = 3;
+    {
+    int int1 = 1;
+    int int2 = 2;
+    int int3 = 3;
 
-    STListPush(&list, int1);
-    STListPush(&list, int2);
-    STListPush(&list, int3);
-
+    STListPush(&list, &int1);
+    STListPush(&list, &int2);
+    STListPush(&list, &int3);
+    }
     STListPrint(&list, STPrintInt);
 
     STListDestroy(&list);

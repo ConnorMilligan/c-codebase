@@ -10,7 +10,7 @@ void STListInit(STList *list) {
 
 void STListPush(STList *list, void *data) {
     STListNode *node = malloc(sizeof(STListNode));
-    node->data = data;
+    memcpy(&node->data, &data, sizeof(void*));
     node->next = NULL;
     node->prev = list->prev;
     if (list->prev != NULL) {
