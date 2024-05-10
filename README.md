@@ -1,7 +1,2 @@
-# LibSaratoga
-A personal C library
-
-## Things to add
-- DL Lists
-- String Type
-- Memory Arena
+# libSaratoga
+A personal C codebase based off the book C Interfaces and Implementation.

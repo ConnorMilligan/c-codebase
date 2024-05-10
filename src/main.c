@@ -4,21 +4,6 @@
 #include <stdlib.h>
 
 int main(int argc, char **argv) {
-    STList list;
-    STListInit(&list);
-    {
-    int int1 = 1;
-    int int2 = 2;
-    int int3 = 3;
-
-    STListPush(&list, &int1);
-    STListPush(&list, &int2);
-    STListPush(&list, &int3);
-    }
-    STListPrint(&list, STPrintInt);
-
-    STListDestroy(&list);
-
     printf("Welcome to LibSaratoga!\n\n");
 
     // Print the values of the macros
@@ -34,17 +19,23 @@ int main(int argc, char **argv) {
     printf("arm   = %d\n", ARCH_ARM);
     printf("arm64 = %d\n\n", ARCH_ARM64);
 
-    // Color test
-#if OS_WINDOWS
-    printf(" ~ This system (Windows) does not support colored output with this framework. ~ \n");
-#endif
-    printf("Color test:\n");
-    printf("This is %sred%s.\n", TERM_COLOR_RED, TERM_COLOR_RESET);
-    printf("This is %sgreen%s.\n", TERM_COLOR_GREEN, TERM_COLOR_RESET);
-    printf("This is %syellow%s.\n", TERM_COLOR_YELLOW, TERM_COLOR_RESET);
-    printf("This is %sblue%s.\n", TERM_COLOR_BLUE, TERM_COLOR_RESET);
-    printf("This is %smagenta%s.\n", TERM_COLOR_MAGENTA, TERM_COLOR_RESET);
-    printf("This is %scyan%s.\n", TERM_COLOR_CYAN, TERM_COLOR_RESET);
+
+    const char *str = atom_string("Hello, World!");
+    printf("Atom: %s\n", str);
+    const char *num = atom_int(12345);
+    printf("Atom: %s\n", num);
+
+
+    // Print the version of the compiler and the version of the library
+    printf("Compiled on %s at %s",
+        __DATE__, 
+        __TIME__);
+    printf(" with %s %s", 
+        COMPILER_CLANG ? "Clang" : COMPILER_GCC ? "GCC" : COMPILER_CL ? "MSVC" : "Unknown",
+        COMPILER_VERSION);
+    printf(" on %s using libSaratoga %d.%d\n",
+        OS_WINDOWS ? "Windows" : OS_LINUX ? "Linux" : OS_MAC ? "Mac" : "Unknown",
+        ST_VERSION_MAJOR, ST_VERSION_MINOR);
 
     return 0;
 }
