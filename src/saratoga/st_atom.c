@@ -1,7 +1,7 @@
 #include "st_atom.h"
 
 #include <string.h>
-#include <assert.h>
+#include "st_assert.h"
 
 #define NUM_ELEMS(x) ((sizeof (x))/(sizeof ((x)[0])))
 

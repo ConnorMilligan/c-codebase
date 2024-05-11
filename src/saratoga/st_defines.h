@@ -9,7 +9,7 @@
 // Library Info.
 // -------------------
 #define ST_VERSION_MAJOR 0
-#define ST_VERSION_MINOR 1
+#define ST_VERSION_MINOR 2
 
 // ------------------- 
 // Data type aliases.
