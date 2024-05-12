@@ -25,12 +25,6 @@ int main(int argc, char **argv) {
     const char *num = atom_int(12345);
     printf("Atom: %s\n", num);
 
-    TRY
-        printf("This is a test\n");
-    ELSE
-        fprintf(stderr, "An error occurred\n");
-    END_TRY;
-
     // Print the version of the compiler and the version of the library
     printf("Compiled on %s at %s",
         __DATE__, 

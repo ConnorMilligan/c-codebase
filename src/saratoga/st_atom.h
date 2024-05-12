@@ -1,5 +1,5 @@
-#ifndef ATOM_H
-#define ATOM_H
+#ifndef ST_ATOM_H
+#define ST_ATOM_H
 
 #include "st_defines.h"
 
@@ -48,4 +48,4 @@ const char *atom_int(uint32 n);
 */
 usize atom_length(const char *str);
 
-#endif //ATOM_H
+#endif // ST_ATOM_H

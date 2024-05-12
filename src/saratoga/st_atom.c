@@ -2,8 +2,8 @@
 
 #include <string.h>
 #include "st_assert.h"
-
-#define NUM_ELEMS(x) ((sizeof (x))/(sizeof ((x)[0])))
+#include "st_memory.h"
+#include "st_util.h"
 
 // Scatter array for hashing
 static unsigned long scatter[] = {
@@ -57,7 +57,7 @@ static unsigned long scatter[] = {
 // The buckets array is an array of pointers to atoms with 2048 elements
 static struct atom {
 	struct atom *link;
-	int len;
+	usize len;
 	char *str;
 } *buckets[2048];
 
@@ -86,7 +86,7 @@ const char* atom_new(const char *str, usize len) {
                     return p->str;
 
     // Allocate memory for the new atom
-    p = malloc(sizeof(*p) + len + 1);
+    p = mem_alloc(sizeof(*p) + len + 1, __FILE__, __LINE__);
     p->len = len;
     p->str = (char *)(p + 1);
     if (len > 0) {

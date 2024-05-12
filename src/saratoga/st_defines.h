@@ -1,5 +1,5 @@
-#ifndef DEFINES_H
-#define DEFINES_H
+#ifndef ST_DEFINES_H
+#define ST_DEFINES_H
 
 #include <stdbool.h>
 #include <stddef.h>
@@ -9,7 +9,7 @@
 // Library Info.
 // -------------------
 #define ST_VERSION_MAJOR 0
-#define ST_VERSION_MINOR 2
+#define ST_VERSION_MINOR 3
 
 // ------------------- 
 // Data type aliases.
@@ -126,4 +126,4 @@ typedef size_t usize;
 // -------------------
 
 
-#endif // DEFINES_H
+#endif // ST_DEFINES_H

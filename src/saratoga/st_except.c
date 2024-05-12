@@ -5,11 +5,11 @@
 #include <assert.h>
 #define T Except_T
 
-Except_Frame *Except_stack = NULL;
+Except_Frame *exceptStack = NULL;
 
 void except_raise(const T *e, const char *file, int line)
 {
-    Except_Frame *p = Except_stack;
+    Except_Frame *p = exceptStack;
     assert(e);
     if (p == NULL) {
         fprintf(stderr, "Uncaught exception");
@@ -26,6 +26,6 @@ void except_raise(const T *e, const char *file, int line)
     p->exception = e;
     p->file = file;
     p->line = line;
-    Except_stack = Except_stack->prev;
+    exceptStack = exceptStack->prev;
     longjmp(p->env, Except_raised);
 }

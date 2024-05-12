@@ -1,5 +1,5 @@
-#ifndef EXCEPT_H
-#define EXCEPT_H
+#ifndef ST_EXCEPT_H
+#define ST_EXCEPT_H
 
 #include <setjmp.h>
 
@@ -143,4 +143,4 @@ void except_push(Except_Frame *frame);
 void except_pop(void);
 
 #undef T
-#endif // EXCEPT_H
+#endif // ST_EXCEPT_H
